@@ -1,5 +1,7 @@
 let numberBut = document.querySelectorAll(".number");
 let numMoniter = document.querySelector(".num-moniter");
+let dot = document.querySelector(".dot");
+// console.log(dot);
 
 // console.dir(numMoniter); dir可以看該元素得屬性跟屬性值
 
@@ -21,6 +23,17 @@ for (let i = 0; i < numberBut.length; i++) {
   });
   //
 }
+
+dot.addEventListener("click", function () {
+  // alert("成功");
+  // 如果螢幕包含小數點，不做任何事情
+  if (numMoniter.innerText.includes(".")) {
+  } else {
+    // 如果沒有小數點，加上小數點
+    numMoniter.innerText += dot.innerText;
+  }
+});
+
 // 只有陣列可以跑迴圈
 
 // console.dir(1);
