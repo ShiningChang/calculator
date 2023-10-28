@@ -4,21 +4,120 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>calculator</title>
     <style>
-      p {
-        border: 1px solid brown;
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      main {
+        width: 100vw;
+        height: 100vh;
+        /* background-color: darkslateblue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* color: rgb(113, 109, 103); */
+
+        .cal-wrapper {
+          width: 50%;
+          min-width: 370px;
+          max-width: calc(100vh / 3 * 2);
+
+          aspect-ratio: 4/6; /*寬高比例  寬/高 */
+          color: brown;
+          /* outline: 1px solid yellowgreen; */
+          background-color: antiquewhite;
+        }
+        .cal-an {
+          width: 100%;
+          height: calc(100% / 6);
+          /* border: 1px solid blue; */
+          display: flex;
+          align-items: center;
+          font-size: 50px;
+
+          & p {
+            font-size: 30px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+
+        & ul {
+          height: calc(100% / 6 * 5);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-content: space-around;
+          box-sizing: border-box;
+          padding: 5px;
+          /* outline: 1px solid red; */
+        }
+
+        & li {
+          outline: 1px solid green;
+          width: calc(25% - 10px);
+          /* height: calc(25% - 10px); */
+          aspect-ratio: 1/1;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 4vw;
+          border-radius: 5%;
+
+          &:hover {
+            background-color: rgb(113, 109, 103);
+          }
+
+          &:active {
+            color: yellow;
+          }
+
+          /* &:nth-child(4) {
+            order: 1;
+          }
+          &:nth-child(3) {
+            order: 2;
+          } */
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum rerum
-        reprehenderit quos quis harum velit delectus tempore quasi commodi
-        exercitationem obcaecati odit a omnis corporis expedita, incidunt
-        temporibus consequuntur fugiat.
-      </p>
+      <section class="cal-wrapper">
+        <div class="cal-an">
+          <p class="num-moniter">0</p>
+        </div>
+        <ul class="cal-button">
+          <li class="number" style="order: 1">1</li>
+          <li class="number" style="order: 2">2</li>
+          <li class="number" style="order: 3">3</li>
+          <li class="symbol" style="order: 4">÷</li>
+          <li class="number" style="order: 5">4</li>
+          <li class="number" style="order: 6">5</li>
+          <li class="number" style="order: 7">6</li>
+          <li class="symbol" style="order: 8">x</li>
+          <li class="number" style="order: 9">7</li>
+          <li class="number" style="order: 10">8</li>
+          <li class="number" style="order: 11">9</li>
+          <li class="symbol" style="order: 12">-</li>
+          <li class="number" style="order: 13">0</li>
+          <li class="symbol" style="order: 14">re</li>
+          <li class="symbol" style="order: 15">%</li>
+          <li class="symbol" style="order: 16">+</li>
+          <li class="symbol" style="order: 17"></li>
+          <li class="symbol" style="order: 18"></li>
+          <li class="symbol" style="order: 19">=</li>
+          <li class="symbol" style="order: 20">.</li>
+        </ul>
+      </section>
     </main>
+
+    <script src="./calculator.js"></script>
   </body>
 </html>
