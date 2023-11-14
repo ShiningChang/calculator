@@ -15,6 +15,7 @@
       main {
         width: 100vw;
         height: 100vh;
+        padding: 230px 0;
         /* background-color: darkslateblue; */
         display: flex;
         justify-content: center;
@@ -30,6 +31,8 @@
           color: brown;
           /* outline: 1px solid yellowgreen; */
           background-color: antiquewhite;
+
+          position: relative;
         }
         .cal-an {
           width: 100%;
@@ -85,11 +88,52 @@
           } */
         }
       }
+
+      .process-moniter {
+        outline: 1px solid red;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0;
+
+        transform-origin: center top;
+        transform: rotate(180deg);
+      }
+      .process-moniter-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        height: 20%;
+        min-height: 40px;
+        font-size: 35px;
+        transform: rotate(180deg);
+      }
     </style>
   </head>
   <body>
     <main>
       <section class="cal-wrapper">
+        <div class="process-moniter">
+          <div class="process-moniter-wrapper">
+            <!-- <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i>
+            <p class="number">123</p>
+            <i class="symbol">+</i> -->
+          </div>
+        </div>
         <div class="cal-an">
           <p class="num-moniter">0</p>
         </div>
@@ -107,13 +151,13 @@
           <li class="number" style="order: 11">9</li>
           <li class="symbol" style="order: 12">-</li>
           <li class="number" style="order: 13">0</li>
-          <li class="symbol" style="order: 14">re</li>
-          <li class="symbol" style="order: 15">%</li>
+          <li class="reset" style="order: 14">re</li>
+          <li class="" style="order: 15">%</li>
           <li class="symbol" style="order: 16">+</li>
-          <li class="symbol" style="order: 17"></li>
-          <li class="symbol" style="order: 18"></li>
-          <li class="symbol" style="order: 19">=</li>
-          <li class="symbol dot" style="order: 20">.</li>
+          <li class="" style="order: 17"></li>
+          <li class="" style="order: 18"></li>
+          <li class="equal" style="order: 19">=</li>
+          <li class="dot" style="order: 20">.</li>
         </ul>
       </section>
     </main>
