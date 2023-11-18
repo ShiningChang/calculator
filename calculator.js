@@ -42,47 +42,52 @@ dot.addEventListener("click", function () {
 // console.log(numberBut);
 // console.log(typeof function () {});
 
-for (let i = 0; i < symbolBut.length; i++) {
-  symbolBut[i].addEventListener("click", function () {
-    // numMoniter.innerText += symbolBut[i].innerText;
-
-    let calculatorTags = `<b>${numMoniter.innerText}</b><i>${symbolBut[i].innerText}</i>`;
-    // debugger;
-    // if (numMoniter.innerText.includes("+")) {
-    //   console.log("n", numMoniter.innerText);
-    //   console.log("p", processMoniterWrapper.innerText);
-
-    //   // processMoniterWrapper.innerText = numMoniter.innerText;
-    //   // console.log("n", numMoniter.innerText);
-    //   // console.log("p", processMoniterWrapper.innerText);
-
-    //   processMoniterWrapper.innerText += numMoniter.innerText;
-    //   console.log("n", numMoniter.innerText);
-    //   console.log("p", processMoniterWrapper.innerText);
-
-    //   numMoniter.innerText = "0";
-    // }
-    if (
-      numMoniter.innerText.includes("-") ||
-      numMoniter.innerText.includes("x") ||
-      numMoniter.innerText.includes("÷") ||
-      numMoniter.innerText.includes("+") ||
-      true
-    ) {
-      //processMoniterWrapper.innerText += numMoniter.innerText;
-      processMoniterWrapper.innerHTML += calculatorTags;
-      numMoniter.innerText = "0";
-    }
-  });
-}
-
 // for (let i = 0; i < symbolBut.length; i++) {
 //   symbolBut[i].addEventListener("click", function () {
-//     processMoniterWrapper.insertAdjacentHTML(
-//       "beforeend",
-//       `
-//     numberBut
-//     `
-//     );
+//     // numMoniter.innerText += symbolBut[i].innerText;
+
+//     let calculatorTags = `<b>${numMoniter.innerText}</b><i>${symbolBut[i].innerText}</i>`;
+//     // debugger;
+//     // if (numMoniter.innerText.includes("+")) {
+//     //   console.log("n", numMoniter.innerText);
+//     //   console.log("p", processMoniterWrapper.innerText);
+
+//     //   // processMoniterWrapper.innerText = numMoniter.innerText;
+//     //   // console.log("n", numMoniter.innerText);
+//     //   // console.log("p", processMoniterWrapper.innerText);
+
+//     //   processMoniterWrapper.innerText += numMoniter.innerText;
+//     //   console.log("n", numMoniter.innerText);
+//     //   console.log("p", processMoniterWrapper.innerText);
+
+//     //   numMoniter.innerText = "0";
+//     // }
+//     if (
+//       numMoniter.innerText.includes("-") ||
+//       numMoniter.innerText.includes("x") ||
+//       numMoniter.innerText.includes("÷") ||
+//       numMoniter.innerText.includes("+") ||
+//       true
+//     ) {
+//       //processMoniterWrapper.innerText += numMoniter.innerText;
+//       processMoniterWrapper.innerHTML += calculatorTags;
+//       numMoniter.innerText = "0";
+//     }
 //   });
 // }
+
+for (let i = 0; i < symbolBut.length; i++) {
+  symbolBut[i].addEventListener("click", function () {
+    processMoniterWrapper.insertAdjacentHTML(
+      // ＨＴＭＬ插入在processMoniterWrapper附近
+      "beforeend",
+      `
+      <p>${numMoniter.innerText}</p>
+     <i>${symbolBut[i].innerText}</i>
+    `
+      // 用標籤包住，之後好運算
+    );
+
+    numMoniter.innerText = 0;
+  });
+}
